@@ -1,7 +1,7 @@
 import React from 'react'
 import PayjpCheckout from '@/components/payjp_checkout'
 
-export default function Call(props) {
+export default function Call() {
     const payjpCheckoutProps = {
         dataKey: '',
         dataText: 'クレジットカードで支払う',
