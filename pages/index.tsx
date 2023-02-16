@@ -10,8 +10,8 @@ export default function Call() {
         onFailedHandler: onFailed,
     }
 
-    function onCreated(){}
-    function onFailed(){}
+    function onCreated(payload: any){}
+    function onFailed(payload: any){}
 
     return (
         <div className="payjpButtonArea">
