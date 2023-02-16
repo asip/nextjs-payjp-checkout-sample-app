@@ -41,7 +41,7 @@ class PayjpCheckout extends React.Component {
         this.payjpCheckoutRef && this.payjpCheckoutRef.appendChild(this.script);
     }
 
-    UNSAFE_componentWillUnmount() {
+    componentWillUnmount() {
         // すでに https://checkout.pay.jp/ の checkout.js が実行済みで、script タグを削除しているだけ
         this.payjpCheckoutRef.removeChild(this.script);
         window.reactPayjpCheckoutOnCreated = null;
