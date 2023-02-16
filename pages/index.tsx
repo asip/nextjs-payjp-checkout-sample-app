@@ -10,7 +10,11 @@ export default function Call() {
         onFailedHandler: onFailed,
     }
 
-    function onCreated(payload: any){}
+    function onCreated(payload: any){
+        //console.log(payload)
+        console.log(payload.token)
+    }
+
     function onFailed(payload: any){}
 
     return (
