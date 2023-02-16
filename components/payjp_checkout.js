@@ -25,18 +25,18 @@ class PayjpCheckout extends React.Component {
         window.alert = () => {};
 
         this.script = document.createElement('script');
-        this.script.setAttribute('src', 'https://checkout.pay.jp/');
-        this.script.setAttribute('class', this.props.className);
-        this.script.setAttribute('data-key', this.props.dataKey);
-        this.props.dataPartial && this.script.setAttribute('data-partial', this.props.dataPartial);
-        this.props.dataText && this.script.setAttribute('data-text', this.props.dataText);
-        this.props.dataSubmitText && this.script.setAttribute('data-submit-text', this.props.dataSubmitText);
-        this.props.dataTokenName && this.script.setAttribute('data-token-name', this.props.dataTokenName);
-        this.props.dataPreviousToken && this.script.setAttribute('data-previous-token', this.props.dataPreviousToken);
-        this.props.dataLang && this.script.setAttribute('data-lang', this.props.dataLang);
-        this.script.setAttribute('data-on-created', 'reactPayjpCheckoutOnCreated');
-        this.script.setAttribute('data-on-failed', 'reactPayjpCheckoutOnFailed');
-        this.props.dataNamePlaceholder && this.script.setAttribute('data-name-placeholder', this.props.dataNamePlaceholder);
+        this.script.src = 'https://checkout.pay.jp/';
+        this.script.classList.add(this.props.className);
+        this.script.dataset['key'] = this.props.dataKey;
+        this.props.dataPartial && (this.script.dataset['partial'] = this.props.dataPartial);
+        this.props.dataText && (this.script.dataset['text'] = this.props.dataText);
+        this.props.dataSubmitText && (this.script.dataset['submitText'] = this.props.dataSubmitText);
+        this.props.dataTokenName && (this.script.dataset['tokenName'] = this.props.dataTokenName);
+        this.props.dataPreviousToken && (this.script.dataset['previousToken'] = this.props.dataPreviousToken);
+        this.props.dataLang && (this.script.dataset['lang'] = this.props.dataLang);
+        this.script.dataset['onCreated'] = 'reactPayjpCheckoutOnCreated';
+        this.script.dataset['onFailed'] = 'reactPayjpCheckoutOnFailed';
+        this.props.dataNamePlaceholder && (this.script.dataset['namePlaceholder'] = this.props.dataNamePlaceholder);
         this.payjpCheckoutRef = document.getElementById('payjpCheckout');
         this.payjpCheckoutRef && this.payjpCheckoutRef.appendChild(this.script);
     }
