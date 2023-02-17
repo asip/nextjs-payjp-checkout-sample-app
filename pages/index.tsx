@@ -15,7 +15,9 @@ export default function Call() {
         console.log(payload.token)
     }
 
-    function onFailed(payload: any){}
+    function onFailed(payload: any){
+        console.log(payload.message)
+    }
 
     return (
         <div className="payjpButtonArea">

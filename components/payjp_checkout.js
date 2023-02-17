@@ -3,7 +3,7 @@ import React from 'react';
 class PayjpCheckout extends React.Component {
     constructor(props) {
         super(props);
-        this.payjpCheckoutRef = null;
+        this.payjpCheckoutElement = null;
     }
 
     static defaultProps = {
@@ -12,9 +12,6 @@ class PayjpCheckout extends React.Component {
         onCreatedHandler: () => {},
         onFailedHandler: () => {},
     };
-
-    /* UNSAFE_componentWillMount() {
-    } */
 
     componentDidMount() {
         this.windowAlertBackUp = window.alert;
@@ -37,13 +34,13 @@ class PayjpCheckout extends React.Component {
         this.script.dataset['onCreated'] = 'reactPayjpCheckoutOnCreated';
         this.script.dataset['onFailed'] = 'reactPayjpCheckoutOnFailed';
         this.props.dataNamePlaceholder && (this.script.dataset['namePlaceholder'] = this.props.dataNamePlaceholder);
-        this.payjpCheckoutRef = document.getElementById('payjpCheckout');
-        this.payjpCheckoutRef && this.payjpCheckoutRef.appendChild(this.script);
+        this.payjpCheckoutElement = document.getElementById('payjpCheckout');
+        this.payjpCheckoutElement && this.payjpCheckoutElement.appendChild(this.script);
     }
 
     componentWillUnmount() {
         // すでに https://checkout.pay.jp/ の checkout.js が実行済みで、script タグを削除しているだけ
-        this.payjpCheckoutRef.removeChild(this.script);
+        this.payjpCheckoutElement.removeChild(this.script);
         window.reactPayjpCheckoutOnCreated = null;
         window.reactPayjpCheckoutOnFailed = null;
         window.reactPayjpCheckoutContext = null;
