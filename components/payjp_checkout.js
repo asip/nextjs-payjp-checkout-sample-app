@@ -25,7 +25,7 @@ class PayjpCheckout extends React.Component {
         this.script.src = 'https://checkout.pay.jp/';
         this.script.classList.add(this.props.className);
         this.script.dataset['key'] = this.props.dataKey;
-        this.props.dataPartial && (this.script.dataset['partial'] = this.props.dataPartial);
+        this.props.dataPartial ? (this.script.dataset['partial'] = this.props.dataPartial) : (this.script.dataset['partial'] = 'false')
         this.props.dataText && (this.script.dataset['text'] = this.props.dataText);
         this.props.dataSubmitText && (this.script.dataset['submitText'] = this.props.dataSubmitText);
         this.props.dataTokenName && (this.script.dataset['tokenName'] = this.props.dataTokenName);
