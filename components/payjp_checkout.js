@@ -34,6 +34,8 @@ class PayjpCheckout extends React.Component {
         this.script.dataset['onCreated'] = 'payjpCheckoutOnCreated';
         this.script.dataset['onFailed'] = 'payjpCheckoutOnFailed';
         this.props.dataNamePlaceholder && (this.script.dataset['namePlaceholder'] = this.props.dataNamePlaceholder);
+        this.props.dataTenant && (this.script.dataset['tenant'] = this.props.dataTenant);
+
         this.payjpCheckoutElement = document.getElementById('payjpCheckout');
         this.payjpCheckoutElement && this.payjpCheckoutElement.appendChild(this.script);
     }
