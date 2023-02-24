@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PayjpCheckout extends React.Component {
+class PayjpCheckoutClass extends React.Component {
   constructor(props) {
     super(props);
     this.payjpCheckoutElement = null;
@@ -50,7 +50,7 @@ class PayjpCheckout extends React.Component {
     window.payjpCheckoutOnFailed = null;
     window.payjpCheckoutContext = null;
     window.alert = this.windowAlertBackUp;
-    window.PayjpCheckout = null;
+    window.PayjpCheckoutClass = null;
   }
 
   shouldComponentUpdate() {
@@ -72,4 +72,4 @@ class PayjpCheckout extends React.Component {
   }
 }
 
-export default PayjpCheckout;
+export default PayjpCheckoutClass;
