@@ -1,6 +1,6 @@
 import React from 'react'
-import PayjpCheckoutFunc from "@/components/payjp_checkout_func";
 import { useRouter } from 'next/router';
+import PayjpCheckoutFunc from "@/components/payjp_checkout_func";
 
 export default function Call() {
   const payjpCheckoutProps = {
@@ -29,7 +29,7 @@ export default function Call() {
   return (
     <div className="payjpButtonArea">
       <div>function component</div>
-      <a href="" onClick={toTop}>class component</a>
+      <div><a href="" onClick={toTop}>class component</a></div>
       <PayjpCheckoutFunc {...payjpCheckoutProps} />
     </div>
   )

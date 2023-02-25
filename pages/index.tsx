@@ -1,7 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
-import PayjpCheckoutClass from '@/components/payjp_checkout_class'
 import { useRouter } from 'next/router';
+import PayjpCheckoutClass from '@/components/payjp_checkout_class'
 
 export default function Call() {
   const payjpCheckoutProps = {
