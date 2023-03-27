@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 // import Link from 'next/link'
 import PayjpCheckoutClass from '@/components/payjp_checkout_class'
 
-export default function Call() {
+export default function Index() {
   const payjpCheckoutProps = {
     dataKey: '',
     dataText: 'クレジットカードで支払う',
