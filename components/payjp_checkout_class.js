@@ -53,7 +53,7 @@ class PayjpCheckoutClass extends React.Component {
     window.PayjpCheckoutClass = null;
   }
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
     return false;
   }
 
