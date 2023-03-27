@@ -31,7 +31,7 @@ export default function Call() {
     <div className="payjpButtonArea">
       <div>function component</div>
       <div><a href="" onClick={toTop}>class component</a></div>
-      {/*<div><Link href="/" >class component</Link></div>*/}
+      {/*<div><a href="/" >class component</a></div>*/}
       <PayjpCheckoutFunc {...payjpCheckoutProps} />
     </div>
   )
