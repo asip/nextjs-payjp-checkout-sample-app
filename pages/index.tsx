@@ -5,7 +5,7 @@ import PayjpCheckoutClass from '@/components/payjp_checkout_class'
 
 export default function Index() {
   const payjpCheckoutProps = {
-    dataKey: '',
+    dataKey: process.env.NEXT_PUBLIC_PAYJP_PUBLIC_KEY,
     dataText: 'クレジットカードで支払う',
     dataPartial: 'true',
     onCreatedHandler: onCreated,

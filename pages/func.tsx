@@ -5,7 +5,7 @@ import PayjpCheckoutFunc from "@/components/payjp_checkout_func";
 
 export default function Func() {
   const payjpCheckoutProps = {
-    dataKey: '',
+    dataKey: process.env.NEXT_PUBLIC_PAYJP_PUBLIC_KEY,
     dataText: 'クレジットカードで支払う',
     dataPartial: 'true',
     onCreatedHandler: onCreated,
