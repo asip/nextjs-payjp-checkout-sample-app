@@ -13,9 +13,8 @@ export default function Func() {
   }
 
   const router = useRouter();
-
-  async function toTop(){
-    await router.push('/')
+  function toTop(){
+    router.push('/')
   }
 
   function onCreated(payload: any) {

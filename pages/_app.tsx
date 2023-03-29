@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app'
 
-function NextPayjpCheckoutSampleApp({ Component, pageProps }: AppProps) {
+function NextjsPayjpCheckoutSampleApp({ Component, pageProps }: AppProps) {
   return (
     <Component {...pageProps} />
   )
 }
 
-export default NextPayjpCheckoutSampleApp
+export default NextjsPayjpCheckoutSampleApp

@@ -14,8 +14,8 @@ export default function Index() {
 
   const router = useRouter();
 
-  async function toFunc(){
-    await router.push('/func')
+  function toFunc(){
+    router.push('/func')
   }
 
   function onCreated(payload: any) {
