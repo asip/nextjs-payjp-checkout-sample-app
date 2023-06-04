@@ -16,13 +16,13 @@ class PayjpCheckoutClass extends React.Component {
   };
 
   componentDidMount() {
-    this.windowAlertBackUp = window.alert;
+    // this.windowAlertBackUp = window.alert;
     window.payjpCheckoutOnCreated = this.onCreated;
     window.payjpCheckoutOnFailed = this.onFailed;
     window.payjpCheckoutContext = this;
-    // カード情報が不正のときに window.alert が payjp の checkout から呼ばれるため
+    /* // カード情報が不正のときに window.alert が payjp の checkout から呼ばれるため
     window.alert = () => {
-    };
+    }; */
 
     this.script = document.createElement('script');
     this.script.src = 'https://checkout.pay.jp/';
@@ -49,7 +49,7 @@ class PayjpCheckoutClass extends React.Component {
     window.payjpCheckoutOnCreated = null;
     window.payjpCheckoutOnFailed = null;
     window.payjpCheckoutContext = null;
-    window.alert = this.windowAlertBackUp;
+    // window.alert = this.windowAlertBackUp;
     window.PayjpCheckout = null;
   }
 
