@@ -3,7 +3,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation';
 // import Link from 'next/link'
-import PayjpCheckoutFunc from "@/components/payjp_checkout_func";
+import PayjpCheckoutFunc from "@/components/payjp_checkout_func_ts";
 
 export default function Func() {
   const payjpCheckoutProps = {
