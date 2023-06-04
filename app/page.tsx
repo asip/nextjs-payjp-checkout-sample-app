@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react'
-import { useRouter } from 'next/navigation';
-// import Link from 'next/link'
+// import { useRouter } from 'next/navigation';
+import Link from 'next/link'
 import PayjpCheckoutClass from '@/components/payjp_checkout_class_ts'
 
 export default function Index() {
@@ -14,11 +14,11 @@ export default function Index() {
     onFailedHandler: onFailed,
   }
 
-  const router = useRouter();
+  /* const router = useRouter();
 
   function toFunc(){
     router.push('/func')
-  }
+  } */
 
   function onCreated(payload: any) {
     //console.log(payload)
@@ -32,8 +32,8 @@ export default function Index() {
   return (
     <div className="payjpButtonArea">
       <div>class component</div>
-      <div><a href="" onClick={toFunc}>function component</a></div>
-      {/*<div><Link href="/func">function component</Link></div>*/}
+      {/* <div><a href="" onClick={toFunc}>function component</a></div> */}
+      <div><Link href="/func">function component</Link></div>
       <PayjpCheckoutClass {...payjpCheckoutProps} />
     </div>
   )

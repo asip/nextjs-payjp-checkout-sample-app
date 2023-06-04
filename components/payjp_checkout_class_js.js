@@ -50,7 +50,7 @@ class PayjpCheckoutClass extends React.Component {
     window.payjpCheckoutOnFailed = null;
     window.payjpCheckoutContext = null;
     window.alert = this.windowAlertBackUp;
-    window.PayjpCheckoutClass = null;
+    window.PayjpCheckout = null;
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {

@@ -59,7 +59,7 @@ function PayjpCheckoutFunc({
       window.payjpCheckoutOnCreated = null;
       window.payjpCheckoutOnFailed = null;
       window.alert = windowAlertBackUp;
-      window.PayjpCheckoutFunc = null;
+      window.PayjpCheckout = null;
     }
   })
 
