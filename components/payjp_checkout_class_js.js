@@ -53,7 +53,7 @@ class PayjpCheckoutClass extends React.Component {
     window.PayjpCheckout = null;
   }
 
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
+  shouldComponentUpdate(_nextProps, _nextState, _nextContext) {
     return false;
   }
 
@@ -63,7 +63,7 @@ class PayjpCheckoutClass extends React.Component {
   }
 
   onFailed(statusCode, errorResponse) {
-    const payload = {message: errorResponse.message}
+    const payload = {statusCode, message: errorResponse.message}
     window.payjpCheckoutContext.props.onFailedHandler(payload);
   }
 
