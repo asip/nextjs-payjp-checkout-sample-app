@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 
 function PayjpCheckoutFunc({
-   className = 'payjp-button',
-   dataKey = undefined,
-   dataPartial = undefined,
-   dataText = undefined,
-   dataSubmitText = undefined,
-   dataTokenName = undefined,
-   dataPreviousToken = undefined,
-   dataLang = undefined,
-   dataNamePlaceholder = undefined,
-   dataTenant = undefined,
-   onCreatedHandler = () => undefined,
-   onFailedHandler = () => undefined
-  }) {
+  className = 'payjp-button',
+  dataKey,
+  dataPartial,
+  dataText,
+  dataSubmitText,
+  dataTokenName,
+  dataPreviousToken,
+  dataLang,
+  dataNamePlaceholder,
+  dataTenant,
+  onCreatedHandler = () => undefined,
+  onFailedHandler = () => undefined
+}) {
   const onCreated = (response) => {
     const payload = {token: response.id}
     onCreatedHandler(payload);
@@ -37,20 +37,19 @@ function PayjpCheckoutFunc({
     const script = document.createElement('script');
     script.src = 'https://checkout.pay.jp/';
     script.classList.add(className);
-    script.dataset['key'] = dataKey;
-    dataPartial ? (script.dataset['partial'] = dataPartial) : (script.dataset['partial'] = 'false')
-    dataText && (script.dataset['text'] = dataText);
-    dataSubmitText && (script.dataset['submitText'] = dataSubmitText);
-    dataTokenName && (script.dataset['tokenName'] = dataTokenName);
-    dataPreviousToken && (script.dataset['previousToken'] = dataPreviousToken);
-    dataLang && (script.dataset['lang'] = dataLang);
-    script.dataset['onCreated'] = 'payjpCheckoutOnCreated';
-    script.dataset['onFailed'] = 'payjpCheckoutOnFailed';
-    dataNamePlaceholder && (script.dataset['namePlaceholder'] = dataNamePlaceholder);
-    dataTenant && (script.dataset['tenant'] = dataTenant);
+    script.dataset.key = dataKey || '';
+    script.dataset.partial = dataPartial || 'false';
+    if (dataText) script.dataset.text = dataText;
+    if (dataSubmitText) script.dataset.submitText = dataSubmitText;
+    if (dataTokenName) script.dataset.tokenName = dataTokenName;
+    if (dataPreviousToken) script.dataset.previousToken = dataPreviousToken;
+    if (dataLang) script.dataset.lang = dataLang;
+    script.dataset.onCreated = 'payjpCheckoutOnCreated';
+    script.dataset.onFailed = 'payjpCheckoutOnFailed';
+    if (dataNamePlaceholder) script.dataset.namePlaceholder = dataNamePlaceholder;
+    if (dataTenant) script.dataset.tenant = dataTenant;
 
-    //console.log(script);
-    let payjpCheckoutElement = document.getElementById('payjpCheckout');
+    const payjpCheckoutElement = document.getElementById('payjpCheckout');
     payjpCheckoutElement?.appendChild(script);
 
     return () => {
@@ -61,7 +60,7 @@ function PayjpCheckoutFunc({
       // window.alert = windowAlertBackUp;
       window.PayjpCheckout = null;
     }
-  })
+  }, [className, dataKey, dataPartial, dataText, dataSubmitText, dataTokenName, dataPreviousToken, dataLang, dataNamePlaceholder, dataTenant, onCreated, onFailed]) // 依存配列を追加
 
   return (<div id="payjpCheckout"></div>);
 }
