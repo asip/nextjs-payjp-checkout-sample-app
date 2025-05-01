@@ -47,7 +47,6 @@ class PayjpCheckoutClass extends React.Component {
     this.payjpCheckoutElement?.removeChild(this.script);
     window.payjpCheckoutOnCreated = null;
     window.payjpCheckoutOnFailed = null;
-    window.payjpCheckoutContext = null;
     // window.alert = this.windowAlertBackUp;
     window.PayjpCheckout = null;
   }
@@ -58,12 +57,12 @@ class PayjpCheckoutClass extends React.Component {
 
   onCreated(response) {
     const payload = {token: response.id}
-    window.payjpCheckoutContext.props.onCreatedHandler(payload);
+    this.props.onCreatedHandler(payload);
   }
 
   onFailed(statusCode, errorResponse) {
     const payload = {statusCode, message: errorResponse.message}
-    window.payjpCheckoutContext.props.onFailedHandler(payload);
+    this.props.onFailedHandler(payload);
   }
 
   render() {
