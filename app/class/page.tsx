@@ -3,9 +3,9 @@
 import React from 'react'
 // import { useRouter } from 'next/navigation';
 import Link from 'next/link'
-import PayjpCheckoutFunc from "@/components/payjp_checkout_func_ts";
+import PayjpCheckoutClass from '@/components/payjp_checkout_class_ts'
 
-export default function Func() {
+export default function Class() {
   const payjpCheckoutProps = {
     dataKey: process.env.NEXT_PUBLIC_PAYJP_PUBLIC_KEY,
     dataText: 'クレジットカードで支払う',
@@ -15,8 +15,9 @@ export default function Func() {
   }
 
   /* const router = useRouter();
-  function toTop(){
-    router.push('/')
+
+  function toFunc(){
+    router.push('/func')
   } */
 
   function onCreated(payload: any) {
@@ -30,10 +31,10 @@ export default function Func() {
 
   return (
     <div className="payjpButtonArea">
-      <div>function component</div>
-      {/* <div><a href="" onClick={toTop}>class component</a></div> */}
-      <div><Link href="/" >class component</Link></div>
-      <PayjpCheckoutFunc {...payjpCheckoutProps} />
+      <div>class component</div>
+      {/* <div><a href="" onClick={toFunc}>function component</a></div> */}
+      <div><Link href="/">function component</Link></div>
+      <PayjpCheckoutClass {...payjpCheckoutProps} />
     </div>
   )
 }
